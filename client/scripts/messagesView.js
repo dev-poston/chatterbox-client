@@ -8,7 +8,7 @@ var MessagesView = {
   },
 
   render: function() {
-    let html = "";
+    let html = '';
     for (let i = 0; i < App.data.results.length; i++) {
       html += MessageView.render(App.data.results[i]);
     }
