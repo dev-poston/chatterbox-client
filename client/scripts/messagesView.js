@@ -3,8 +3,7 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
-    // MessagesView.render();
-    console.log(App.username);
+
   },
 
   render: function() {
@@ -21,9 +20,9 @@ var MessagesView = {
       }
       html += MessageView.render(currentMsg);
     }
-
+    console.log('rendered');
+    $('#chats').empty();
     $('#chats').append(html);
   }
 
 };
-

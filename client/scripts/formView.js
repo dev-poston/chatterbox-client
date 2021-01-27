@@ -21,11 +21,11 @@ var FormView = {
 
     let successCallback = function () {
       console.log('This message has been successfully submitted.');
+      
       App.fetch();
     };
 
     Parse.create(message, successCallback);
-
 
     console.log('click!');
   },

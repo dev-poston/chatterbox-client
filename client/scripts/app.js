@@ -22,6 +22,8 @@ var App = {
       // examine the response from the server request:
       App.data = data;
       console.log(data);
+      console.log('boom');
+      
       MessagesView.render();
       callback();
     });
