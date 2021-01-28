@@ -26,7 +26,6 @@ var FormView = {
 
     Parse.create(message, successCallback);
 
-
     console.log('click!');
   },
 

@@ -41,9 +41,11 @@
 
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
-        Room:
-        <select></select>
-        <button>Add Room</button>
+        <label>Room:</label>
+        <input list="roomlist" name="room" id="therooms" onclick="RoomsView.render()"/>
+        <datalist id="roomlist">
+        </datalist>
+        <!-- <button>Add Room</button> -->
       </div>
       <form action="#" id="send" method="post">
         <input type="text" name="message" id="message"/>
