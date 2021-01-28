@@ -19,7 +19,7 @@ body {
     margin-top: 0;
     font-size: 35px;
     margin-bottom: 5px;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
 }
 
 #main h1 span {
@@ -88,3 +88,55 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+.topnav {
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  padding: 0px;
+}
+
+.topnav #hamburgerLinks {
+  display: none;
+  height: 100px;
+}
+
+.topnav #hamburgerLinks a {
+  padding: 0px;
+}
+
+.topnav a {
+  color: black;
+  padding: 14px 0px 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: white;
+  color: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  color: #ddd;
+}
+
+.menuSpacer {
+  width: 66%;
+  height: 0px;
+}
+
+.container {
+  display: flex;
+}
+
+.menuTitle {
+  font-size: 1em;
+  padding: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}

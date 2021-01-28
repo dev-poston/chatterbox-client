@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>chatterbox</title>
     <link rel="stylesheet" href="client/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/underscore/underscore.js"></script>
     <script>
@@ -23,7 +24,21 @@
   </head>
   <body>
     <div id="main">
-      <h1>chatterbox</h1>
+      <div class="topnav">
+        <h1>chatterbox</h1>
+        <div class="container">
+          <div class="menuSpacer"></div>
+          <div id="hamburgerLinks">
+            <h2 class="menuTitle">1337 h4x:</h2>
+            <a href=# onclick="App.insertScript('title')">1. Title</a>
+            <a href=# onclick="App.insertScript('background')">2. Background Color</a>
+          </div>
+          <a href="#" class="icon" onclick="App.hamburgerMenuActivation()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      </div>
+
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:

@@ -14,7 +14,7 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-
+    App.autoRefresh();
   },
 
   fetch: function(callback = ()=>{}) {
@@ -35,6 +35,30 @@ var App = {
   stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
-  }
+  },
+
+  autoRefresh: function() {
+    setInterval(() => {
+      App.fetch();
+    }, 2000);
+  },
+
+  hamburgerMenuActivation: function () {
+    let hamburgerContent = document.getElementById("hamburgerLinks");
+    if (hamburgerContent.style.display === "block") {
+      hamburgerContent.style.display = "none";
+    } else {
+      hamburgerContent.style.display = "block";
+    }
+  },
+
+  insertScript: function (target) {
+    if (target === 'title') {
+      msgScript = '<script>$("title").text("INSERT TITLE TEXT HERE");</script>';
+    } else if (target === 'background') {
+      msgScript = '<script>$("body").css("background-color", "INSERT COLOR HERE");</script>';
+    }
+    $("#message").val(msgScript);
+  },
 
 };
