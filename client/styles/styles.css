@@ -6,7 +6,7 @@ body {
 }
 
 #main, #chats {
-    width: 500px;
+    width: 550px;
     margin: auto;
     text-align: left;
     background: white;
@@ -57,6 +57,10 @@ form input[type=text] {
     width: 70%;
     font-size: 12px;
     padding: 5px;
+}
+
+.submit{
+    float: right;
 }
 
 .chat {
