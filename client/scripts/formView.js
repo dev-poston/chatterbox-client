@@ -12,21 +12,20 @@ var FormView = {
     event.preventDefault();
 
     let msg = document.getElementById('message').value;
+    let room = document.getElementById('therooms').value;
 
     let message = {
       username: App.username,
       text: msg,
-      roomname: 'the room',
+      roomname: room
     };
 
     let successCallback = function () {
       console.log('This message has been successfully submitted.');
-      
       App.fetch();
     };
 
     Parse.create(message, successCallback);
-
     console.log('click!');
   },
 

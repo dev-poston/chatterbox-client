@@ -16,16 +16,13 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
     App.autoRefresh();
-
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
       App.data = data;
-      console.log(data);
-      console.log('boom');
-
+      //console.log(data);
       MessagesView.render();
       callback();
     });

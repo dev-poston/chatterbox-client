@@ -9,7 +9,6 @@ var RoomsView = {
   render: function() {
 
     for (let i = 0; i < App.data.results.length; i++) {
-
       let currentMsg = App.data.results[i];
       currentMsg.roomname = _.escape(currentMsg.roomname);
 
@@ -20,8 +19,6 @@ var RoomsView = {
         App.roomArray.push(currentMsg.roomname);
         $('#roomlist').append('<option value="' + currentMsg.roomname + '">');
       }
-      console.log(App.roomArray);
-
     }
   }
 
