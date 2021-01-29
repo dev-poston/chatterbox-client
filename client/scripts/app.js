@@ -6,6 +6,8 @@ var App = {
 
   roomArray: [],
 
+  roomName: undefined,
+
   initialize: function() {
     App.username = window.location.search.substr(10);
 

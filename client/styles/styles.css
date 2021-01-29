@@ -59,6 +59,10 @@ form input[type=text] {
     padding: 5px;
 }
 
+.submit{
+    float: right;
+}
+
 .chat {
     padding: 5px;
     margin-bottom: 5px;
