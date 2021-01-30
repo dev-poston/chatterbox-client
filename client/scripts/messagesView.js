@@ -1,7 +1,5 @@
 var MessagesView = {
 
-  // $chats: $('#chats'),
-
   initialize: function() {
 
   },
@@ -49,10 +47,18 @@ var MessagesView = {
       $('#chats').empty();
       $('#chats').append(html);
     }
-
-
-
-
+    const chatsDomElement = document.querySelector('#chats');
+    const userNameList = chatsDomElement.querySelectorAll('.username');
+    console.log(App.friends.length);
+    console.log(App.friends);
+    for (var j = 0; j < userNameList.length; j++) {
+      for (var i = 0; i < App.friends.length; i++) {
+        console.log(userNameList[j].textContent === App.friends[i]);
+        if (userNameList[j].textContent === App.friends[i]) {
+          $(userNameList[j]).addClass('friend');
+        }
+      }
+    }
   }
 
 };

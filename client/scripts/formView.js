@@ -10,13 +10,10 @@ var FormView = {
 
   handleSubmit: function(event) {
 
-    // Stop the browser from submitting the form
     event.preventDefault();
 
     let msg = document.getElementById('message').value;
     let room = document.getElementById('therooms').value;
-
-    //  console.log(room);
 
     let message = {
       username: App.username,
@@ -30,7 +27,6 @@ var FormView = {
     };
 
     Parse.create(message, successCallback);
-    console.log('click!');
   },
 
   setStatus: function(active) {
@@ -41,7 +37,6 @@ var FormView = {
   filter: function(event) {
     let currentRoom = document.getElementById('therooms').value;
     App.roomName = currentRoom;
-    // MessagesView.render(currentRoom);
   }
 
 };
