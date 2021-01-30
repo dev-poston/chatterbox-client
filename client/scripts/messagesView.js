@@ -1,7 +1,5 @@
 var MessagesView = {
 
-  // $chats: $('#chats'),
-
   initialize: function() {
 
   },
@@ -13,11 +11,11 @@ var MessagesView = {
 
       for (let i = 0; i < App.data.results.length; i++) {
         let currentMsg = App.data.results[i];
-        currentMsg.username =  _.escape(currentMsg.username);
-        currentMsg.text =  _.escape(currentMsg.text);
-        currentMsg.roomname =  _.escape(currentMsg.roomname);
-        currentMsg.createdAt =  _.escape(currentMsg.createdAt);
-        currentMsg.updatedAt =  _.escape(currentMsg.updatedAt);
+        currentMsg.username = _.escape(currentMsg.username);
+        currentMsg.text = _.escape(currentMsg.text);
+        currentMsg.roomname = _.escape(currentMsg.roomname);
+        currentMsg.createdAt = _.escape(currentMsg.createdAt);
+        currentMsg.updatedAt = _.escape(currentMsg.updatedAt);
         if (currentMsg.username === undefined
           || currentMsg.text === undefined
           || currentMsg.roomname === undefined
@@ -33,11 +31,11 @@ var MessagesView = {
       let html = "";
       for (let i = 0; i < App.data.results.length; i++) {
         let currentMsg = App.data.results[i];
-        currentMsg.username =  _.escape(currentMsg.username);
-        currentMsg.text =  _.escape(currentMsg.text);
-        currentMsg.roomname =  _.escape(currentMsg.roomname);
-        currentMsg.createdAt =  _.escape(currentMsg.createdAt);
-        currentMsg.updatedAt =  _.escape(currentMsg.updatedAt);
+        currentMsg.username = _.escape(currentMsg.username);
+        currentMsg.text = _.escape(currentMsg.text);
+        currentMsg.roomname = _.escape(currentMsg.roomname);
+        currentMsg.createdAt = _.escape(currentMsg.createdAt);
+        currentMsg.updatedAt = _.escape(currentMsg.updatedAt);
         if (currentMsg.username !== undefined
           && currentMsg.text !== undefined
           && currentMsg.roomname === App.roomName
@@ -49,10 +47,18 @@ var MessagesView = {
       $('#chats').empty();
       $('#chats').append(html);
     }
-
-
-
-
+    const chatsDomElement = document.querySelector('#chats');
+    const userNameList = chatsDomElement.querySelectorAll('.username');
+    console.log(App.friends.length);
+    console.log(App.friends);
+    for (var j = 0; j < userNameList.length; j++) {
+      for (var i = 0; i < App.friends.length; i++) {
+        console.log(userNameList[j].textContent === App.friends[i]);
+        if (userNameList[j].textContent === App.friends[i]) {
+          $(userNameList[j]).addClass('friend');
+        }
+      }
+    }
   }
 
 };

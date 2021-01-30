@@ -8,22 +8,21 @@ var App = {
 
   roomName: undefined,
 
+  friends: [],
   initialize: function() {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
     RoomsView.initialize();
-    // Fetch initial batch of messages
+
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    //App.autoRefresh();
     Friends.initialize();
-
+    App.autoRefresh();
   },
 
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
-      // examine the response from the server request:
       App.data = data;
       console.log(data);
       MessagesView.render();
@@ -63,6 +62,6 @@ var App = {
       msgScript = '<script>$("body").css("background-color", "INSERT COLOR HERE");</script>';
     }
     $("#message").val(msgScript);
-  },
+  }
 
 };
