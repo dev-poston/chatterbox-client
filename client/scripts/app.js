@@ -16,7 +16,7 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
-    //App.autoRefresh();
+    App.autoRefresh();
     Friends.initialize();
 
   },
@@ -25,7 +25,7 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       App.data = data;
-      //console.log(data);
+      console.log(data);
       MessagesView.render();
       callback();
     });
